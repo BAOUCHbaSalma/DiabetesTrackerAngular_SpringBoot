@@ -1,9 +1,15 @@
 package com.example.demo.Models;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.Collection;
 @Entity
+@Setter
+@ToString
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Diabetiques {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

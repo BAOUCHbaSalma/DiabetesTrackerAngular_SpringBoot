@@ -13,13 +13,13 @@ export class GlycemieTemplateComponent implements OnInit{
 
   public glycemie:any;
   public dataSource:any;
-  public displayedColumns=['id',]
+  public displayedColumns=['idGlycemie','valeurBefore','valeurAfter','date','heurs','diabetiques'];
 
   constructor(private http:HttpClient) {
 
   }
   ngOnInit(): void {
-    this.http.get("http://localhost:8080/Home")
+    this.http.get("http://localhost:8080/home")
       .subscribe({
         next:data => {
 
