@@ -1,11 +1,18 @@
 package com.example.demo.Models;
 
 import jakarta.persistence.*;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
+
 public class Glycemie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
