@@ -14,7 +14,7 @@ import {Glycemie} from "../Models/diabetique.models";
   styleUrl: './glycemie-template.component.css'
 })
 export class GlycemieTemplateComponent implements OnInit{
-  public glycemies:any;
+  public glycemies!:Array<Glycemie>;
   public dataSource:any;
   public displayedColumns=['idGlycemie','valeurBefore','valeurAfter','date','heurs','diabetiques'];
 
