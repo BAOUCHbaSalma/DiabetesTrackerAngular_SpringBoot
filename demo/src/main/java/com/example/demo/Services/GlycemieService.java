@@ -18,4 +18,8 @@ public class GlycemieService {
 
     }
 
+    public Glycemie addGlycemie(Glycemie glycemie) {
+        return glycemieRepository.save(glycemie);
+    }
+
 }
