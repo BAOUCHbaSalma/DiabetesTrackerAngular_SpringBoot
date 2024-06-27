@@ -4,6 +4,8 @@ import {GlycemieTemplateComponent} from "./glycemie-template/glycemie-template.c
 import {GlycemieFormComponent} from "./glycemie-form/glycemie-form.component";
 
 const routes: Routes = [
+  {path:"home",component:GlycemieTemplateComponent},
+  {path:"add",component:GlycemieFormComponent}
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 package com.example.demo.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -32,6 +33,7 @@ public class Glycemie {
     private LocalTime heurs;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "idDiabetiques")
     private Diabetiques diabetiques;
 }

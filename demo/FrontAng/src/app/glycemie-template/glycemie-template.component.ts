@@ -14,18 +14,17 @@ import {Glycemie} from "../Models/diabetique.models";
   styleUrl: './glycemie-template.component.css'
 })
 export class GlycemieTemplateComponent implements OnInit{
-  public glycemies!:Array<Glycemie>;
+  glycemies: Glycemie[] = [];
 
 
   constructor(private diabetiqueService :DiabetiqueService) {
 }
 
   ngOnInit(): void {
-    this.diabetiqueService.getAllGlycemie().subscribe({
-      next:value => {
+    this.diabetiqueService.getAllGlycemie().subscribe(value => {
         this.glycemies=value
 
-      }
+
     })
 
   }
