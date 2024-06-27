@@ -29,7 +29,7 @@ export class GlycemieFormComponent implements OnInit{
     formData.set('valeurAfter',this.glycemieForm.value.valeurAfter);
     formData.set('date',this.glycemieForm.value.date);
     formData.set('heurs',this.glycemieForm.value.heurs);
-    formData.set('diabetiquesId',this.glycemieForm.value.diabetiquesId);
+    formData.set('diabetiques.idDiabetiques',this.glycemieForm.value.diabetiquesId);
     this.diabetiqueService.saveGlycemie(formData).subscribe(
       {
         next:value =>
