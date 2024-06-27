@@ -7,6 +7,7 @@ import { GlycemieTemplateComponent } from './glycemie-template/glycemie-template
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
 import { GlycemieFormComponent } from './glycemie-form/glycemie-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,12 +15,15 @@ import { GlycemieFormComponent } from './glycemie-form/glycemie-form.component';
     GlycemieTemplateComponent,
     GlycemieFormComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MatTableModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+
+
+        MatTableModule,
+        ReactiveFormsModule
+    ],
   providers: [
     provideClientHydration()
   ],

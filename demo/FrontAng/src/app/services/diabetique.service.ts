@@ -13,4 +13,7 @@ export class DiabetiqueService {
   public getAllGlycemie():Observable<Array<Glycemie>>{
     return this.http.get<Array<Glycemie>>("http://localhost:8080/home")
   }
+  public saveGlycemie(formData:any):Observable<Glycemie>{
+    return this.http.post<Glycemie>("http://localhost:8080/Add",formData);
+  }
 }

@@ -15,8 +15,7 @@ import {Glycemie} from "../Models/diabetique.models";
 })
 export class GlycemieTemplateComponent implements OnInit{
   public glycemies!:Array<Glycemie>;
-  public dataSource:any;
-  public displayedColumns=['idGlycemie','valeurBefore','valeurAfter','date','heurs','diabetiques'];
+
 
   constructor(private diabetiqueService :DiabetiqueService) {
 }
@@ -25,7 +24,7 @@ export class GlycemieTemplateComponent implements OnInit{
     this.diabetiqueService.getAllGlycemie().subscribe({
       next:value => {
         this.glycemies=value
-        this.dataSource=new MatTableDataSource(this.glycemies)
+
       }
     })
 
