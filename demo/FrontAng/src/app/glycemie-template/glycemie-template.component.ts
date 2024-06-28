@@ -27,6 +27,8 @@ export class GlycemieTemplateComponent implements OnInit{
 
     })
 
+   // this.diabetiqueService.DeleteGlycemie()
+
   }
 
 

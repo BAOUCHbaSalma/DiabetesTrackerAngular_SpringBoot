@@ -1,12 +1,12 @@
-<h2>Valeurs glycemiques</h2>
+<h2>Valeurs glycémiques</h2>
 <table>
   <tr>
-    <th>Id Glycemie</th>
+    <th>Id Glycémie</th>
     <th>Valeur Before</th>
     <th>Valeur After</th>
     <th>Date</th>
-    <th>Heurs</th>
-    <th>Diabetiques</th>
+    <th>Heures</th>
+    <th>Actions</th>
   </tr>
   <tr *ngFor="let glycemie of glycemies">
     <td>{{ glycemie.idGlycemie }}</td>
@@ -14,6 +14,6 @@
     <td>{{ glycemie.valeurAfter }}</td>
     <td>{{ glycemie.date }}</td>
     <td>{{ glycemie.heurs }}</td>
-    <td>{{ glycemie.diabetiques }}</td>
+
   </tr>
 </table>

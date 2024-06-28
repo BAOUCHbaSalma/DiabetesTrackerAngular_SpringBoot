@@ -2,10 +2,7 @@ package com.example.demo.Controllers;
 import com.example.demo.Models.Glycemie;
 import com.example.demo.Services.GlycemieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -19,13 +16,17 @@ private final GlycemieService glycemieService;
         this.glycemieService = glycemieService;
     }
 
-    @RequestMapping("/home")
+    @GetMapping("/home")
     public ArrayList<Glycemie> home(){
         return glycemieService.ShowGlycemie();
     }
 
-    @RequestMapping("/Add")
-    public Glycemie addGlycemie(@ModelAttribute Glycemie glycemie) {
+    @PostMapping ("/Add")
+    public Glycemie addGlycemie(@RequestBody Glycemie glycemie) {
         return glycemieService.addGlycemie(glycemie);
+    }
+    @DeleteMapping("/Delete/{id}")
+    public void DeleteGlycemie(@PathVariable("id") Integer id){
+        glycemieService.Delete(id);
     }
 }

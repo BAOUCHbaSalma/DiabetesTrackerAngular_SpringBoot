@@ -20,6 +20,22 @@ public class GlycemieService {
 
     public Glycemie addGlycemie(Glycemie glycemie) {
         return glycemieRepository.save(glycemie);
+
+    }
+
+    public Glycemie RecupererGlycemie(Integer id){
+        return glycemieRepository.findById(id).orElseThrow();
+    }
+    public Glycemie UpdateGlycemie(Integer id , Glycemie glycemie){
+       Glycemie glycemie1= RecupererGlycemie(id);
+       glycemie1.setValeurBefore(glycemie.getValeurBefore());
+       glycemie1.setValeurAfter(glycemie.getValeurAfter());
+       glycemie1.setDate(glycemie.getDate());
+       glycemie1.setHeurs(glycemie.getHeurs());
+       return glycemieRepository.save(glycemie1);
+    }
+    public void Delete(Integer id){
+        glycemieRepository.deleteById(id);
     }
 
 }

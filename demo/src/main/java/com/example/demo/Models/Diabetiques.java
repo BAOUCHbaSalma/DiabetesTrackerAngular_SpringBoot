@@ -1,5 +1,6 @@
 package com.example.demo.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,6 +31,7 @@ public class Diabetiques {
     private String genre;
 
     @OneToMany(mappedBy = "diabetiques")
+    @JsonIgnore
     private Collection<Glycemie> valuesGlycemies;
 
 }

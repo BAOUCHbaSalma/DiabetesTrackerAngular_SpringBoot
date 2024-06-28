@@ -33,7 +33,6 @@ public class Glycemie {
     private LocalTime heurs;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "idDiabetiques")
     private Diabetiques diabetiques;
 }

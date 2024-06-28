@@ -16,4 +16,7 @@ export class DiabetiqueService {
   public saveGlycemie(formData:any):Observable<Glycemie>{
     return this.http.post<Glycemie>("http://localhost:8080/Add",formData);
   }
+ // public DeleteGlycemie(id:any){
+ //   return this.http.delete("http://localhost:8080/Delete",id)
+ // }
 }
