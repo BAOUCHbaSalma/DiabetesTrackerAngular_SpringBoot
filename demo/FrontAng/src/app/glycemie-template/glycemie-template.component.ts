@@ -31,8 +31,11 @@ export class GlycemieTemplateComponent implements OnInit{
   })}
 
   deleteGlycemie(id:number){
-    this.diabetiqueService.deleteGlycemie(id).subscribe()
-      console.log(id)
+    this.diabetiqueService.deleteGlycemie(id).subscribe(()=>{
+      this.getGlycemie();
+      }
+    )
+
     }
 
 

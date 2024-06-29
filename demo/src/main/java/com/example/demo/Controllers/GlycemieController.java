@@ -32,8 +32,7 @@ private final GlycemieService glycemieService;
     }
     @PutMapping("/update/{id}")
     public Glycemie updateGlycemie(@PathVariable("id") Integer id,@RequestBody Glycemie glycemie){
-        glycemieService.UpdateGlycemie(id,glycemie);
-        return glycemieService.RecupererGlycemie(id) ;
+        return  glycemieService.UpdateGlycemie(id,glycemie) ;
     }
     @GetMapping("/Find/{id}")
     public Glycemie FindGlycemie(@PathVariable("id") Integer id){
