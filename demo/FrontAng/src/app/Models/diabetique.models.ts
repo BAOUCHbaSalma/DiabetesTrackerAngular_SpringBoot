@@ -1,7 +1,7 @@
 export interface Glycemie{
-  idGlycemie:Number
-  valeurBefore:Number
-  valeurAfter:Number
+  idGlycemie:number
+  valeurBefore:number
+  valeurAfter:number
   date:String
   heurs:String
   diabetiques:Diabetique
@@ -9,12 +9,12 @@ export interface Glycemie{
 }
 
 export interface Diabetique{
-  idDiabetiques:Number
+  idDiabetiques:number
   nameDiabetiques:String
-  poids:Number
-  taille:Number
+  poids:number
+  taille:number
   genre:String
-  ageDiabetiques:Number
+  ageDiabetiques:number
   valuesGlycemies:Array<Glycemie>
 
 

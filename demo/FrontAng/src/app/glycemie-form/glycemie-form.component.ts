@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {DiabetiqueService} from "../services/diabetique.service";
+import {Glycemie} from "../Models/diabetique.models";
 
 @Component({
   selector: 'app-glycemie-form',
@@ -41,4 +42,26 @@ export class GlycemieFormComponent implements OnInit{
 
 
   }
+  hundelSubmit(): void {
+    const formValues = this.glycemieForm.value;
+    const glycemie: Glycemie = {
+      idGlycemie: 0,
+      valeurBefore: formValues.valeurBefore,
+      valeurAfter: formValues.valeurAfter,
+      date: formValues.date,
+      heurs: formValues.heurs,
+      diabetiques: {
+        idDiabetiques: formValues.diabetiquesId,
+        nameDiabetiques: '',
+        poids: 0,
+        taille: 0,
+        genre: '',
+        ageDiabetiques: 0,
+        valuesGlycemies: []
+      }
+    };
+
+    this.diabetiqueService.saveGlycemie(glycemie).subscribe(() => {
+      this.ngOnInit();
+    });}
 }

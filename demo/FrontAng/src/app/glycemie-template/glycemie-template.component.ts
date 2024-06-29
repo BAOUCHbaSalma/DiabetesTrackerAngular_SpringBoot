@@ -21,15 +21,20 @@ export class GlycemieTemplateComponent implements OnInit{
 }
 
   ngOnInit(): void {
-    this.diabetiqueService.getAllGlycemie().subscribe(value => {
-        this.glycemies=value
-
-
-    })
-
-   // this.diabetiqueService.DeleteGlycemie()
-
+    this.getGlycemie()
   }
+
+
+  getGlycemie(){
+    this.diabetiqueService.getAllGlycemie().subscribe(value => {
+      this.glycemies=value
+  })}
+
+  deleteGlycemie(id:number){
+    this.diabetiqueService.deleteGlycemie(id).subscribe()
+      console.log(id)
+    }
+
 
 
 }

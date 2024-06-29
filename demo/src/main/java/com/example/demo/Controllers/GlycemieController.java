@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 @RestController
 @CrossOrigin("*")
+
 public class GlycemieController {
 
 private final GlycemieService glycemieService;

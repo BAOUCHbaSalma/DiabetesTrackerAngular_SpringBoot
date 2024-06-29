@@ -9,6 +9,8 @@ import {Observable} from "rxjs";
 })
 export class DiabetiqueService {
 
+  urlApi="http://localhost:8080";
+
   constructor(private http :HttpClient ) {}
   public getAllGlycemie():Observable<Array<Glycemie>>{
     return this.http.get<Array<Glycemie>>("http://localhost:8080/home")
@@ -16,7 +18,7 @@ export class DiabetiqueService {
   public saveGlycemie(formData:any):Observable<Glycemie>{
     return this.http.post<Glycemie>("http://localhost:8080/Add",formData);
   }
- // public DeleteGlycemie(id:any){
- //   return this.http.delete("http://localhost:8080/Delete",id)
- // }
+public deleteGlycemie(id:number){
+    return this.http.delete(`${this.urlApi}/Delete/${id}`)
+}
 }

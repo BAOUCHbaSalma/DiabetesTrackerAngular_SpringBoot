@@ -1,5 +1,5 @@
-<h2>Valeurs glycémiques</h2>
 <table>
+  <thead>
   <tr>
     <th>Id Glycémie</th>
     <th>Valeur Before</th>
@@ -8,12 +8,17 @@
     <th>Heures</th>
     <th>Actions</th>
   </tr>
+  </thead>
+  <tbody>
   <tr *ngFor="let glycemie of glycemies">
     <td>{{ glycemie.idGlycemie }}</td>
     <td>{{ glycemie.valeurBefore }}</td>
     <td>{{ glycemie.valeurAfter }}</td>
     <td>{{ glycemie.date }}</td>
     <td>{{ glycemie.heurs }}</td>
-
+    <td>
+      <button type="button" (click)="deleteGlycemie(glycemie.idGlycemie)">Delete</button>
+    </td>
   </tr>
+  </tbody>
 </table>
