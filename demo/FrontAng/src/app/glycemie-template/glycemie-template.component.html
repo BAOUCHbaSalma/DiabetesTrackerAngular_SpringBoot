@@ -17,6 +17,7 @@
     <td>{{ glycemie.date }}</td>
     <td>{{ glycemie.heurs }}</td>
     <td>
+      <a routerLink="/Glycemie/{{ glycemie.idGlycemie }}/edit">Update</a>
       <button type="button" (click)="deleteGlycemie(glycemie.idGlycemie)">Delete</button>
     </td>
   </tr>

@@ -1,0 +1,22 @@
+<h1>edit glycemie</h1>
+<form [formGroup]="glycemieForm" (ngSubmit)="updateGlycemie()">
+  <label for="valeurBefore">Valeur Before:</label>
+  <input id="valeurBefore" formControlName="valeurBefore" type="number">
+
+  <label for="valeurAfter">Valeur After:</label>
+  <input id="valeurAfter" formControlName="valeurAfter" type="number">
+
+  <label for="date">Date:</label>
+  <input id="date" formControlName="date" type="date">
+
+  <label for="heurs">Heures:</label>
+  <input id="heurs" formControlName="heurs" type="time">
+
+  <label for="diabetiquesId">Diabetiques Id:</label>
+  <input id="diabetiquesId" formControlName="diabetiquesId" type="number">
+
+  <button  type="submit">Submit</button>
+</form>
+
+
+

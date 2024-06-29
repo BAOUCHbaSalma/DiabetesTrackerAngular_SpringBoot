@@ -30,4 +30,13 @@ private final GlycemieService glycemieService;
     public void DeleteGlycemie(@PathVariable("id") Integer id){
         glycemieService.Delete(id);
     }
+    @PutMapping("/update/{id}")
+    public Glycemie updateGlycemie(@PathVariable("id") Integer id,@RequestBody Glycemie glycemie){
+        glycemieService.UpdateGlycemie(id,glycemie);
+        return glycemieService.RecupererGlycemie(id) ;
+    }
+    @GetMapping("/Find/{id}")
+    public Glycemie FindGlycemie(@PathVariable("id") Integer id){
+       return this.glycemieService.RecupererGlycemie(id);
+    }
 }

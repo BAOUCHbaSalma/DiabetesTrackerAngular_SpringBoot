@@ -21,4 +21,10 @@ export class DiabetiqueService {
 public deleteGlycemie(id:number){
     return this.http.delete(`${this.urlApi}/Delete/${id}`)
 }
+public updateGlycemie(id:number,glycemie:Glycemie){
+    return this.http.put(`${this.urlApi}/update/${id}`,glycemie)
+}
+public findGlycemie(id:number){
+    return this.http.get(`${this.urlApi}/Find/${id}`)
+}
 }
