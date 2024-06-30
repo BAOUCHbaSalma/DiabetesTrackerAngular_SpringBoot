@@ -9,6 +9,7 @@ import {MatTableModule} from "@angular/material/table";
 import { GlycemieFormComponent } from './glycemie-form/glycemie-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { UpdateGlycemieComponent } from './update-glycemie/update-glycemie.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UpdateGlycemieComponent } from './update-glycemie/update-glycemie.compo
         AppRoutingModule,
         HttpClientModule,
         MatTableModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgbModule
     ],
   providers: [
     provideClientHydration()
