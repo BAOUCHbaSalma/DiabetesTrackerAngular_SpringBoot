@@ -1,30 +1,40 @@
 
-<table>
-  <thead>
-  <tr>
-    <th>Id Glycémie</th>
-    <th>Valeur Before</th>
-    <th>Valeur After</th>
-    <th>Date</th>
-    <th>Heures</th>
-    <th>Actions</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let glycemie of glycemies">
-    <td>{{ glycemie.idGlycemie }}</td>
-    <td>{{ glycemie.valeurBefore }}</td>
-    <td>{{ glycemie.valeurAfter }}</td>
-    <td>{{ glycemie.date }}</td>
-    <td>{{ glycemie.heurs }}</td>
-    <td>
-      <a routerLink="/Glycemie/{{ glycemie.idGlycemie }}/edit">Update</a>
-      <button type="button" (click)="deleteGlycemie(glycemie.idGlycemie)">Delete</button>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<div class="chart">
-  <canvas id="chart-1"></canvas>
+  <div class="chart"> <canvas id="chart-1"></canvas> </div>
+
+<div class="details">
+  <div class="recentOrders">
+    <table>
+      <thead>
+      <tr>
+        <th>Valeur Glycemie Before</th>
+        <th>Valeur Glycemie After</th>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>ID Diabétiques</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let glycemie of glycemies">
+        <td>{{ glycemie.valeurBefore }}</td>
+        <td>{{ glycemie.valeurAfter }}</td>
+        <td>{{ glycemie.date }}</td>
+        <td>{{ glycemie.heurs }}</td>
+        <td>{{ glycemie.diabetiques.idDiabetiques }}</td>
+        <td>
+        <td>
+          <a routerLink="/Glycemie/{{ glycemie.idGlycemie }}/edit" class="btn btn-update">Update</a>
+          <button type="button" class="btn btn-delete" (click)="deleteGlycemie(glycemie.idGlycemie)">Delete</button>
+        </td>
+
+
+
+
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
 </div>
+
 

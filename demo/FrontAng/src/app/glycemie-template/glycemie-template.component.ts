@@ -12,35 +12,36 @@ import { Chart, registerables } from 'chart.js';
   templateUrl: './glycemie-template.component.html',
   styleUrl: './glycemie-template.component.css'
 })
-export class GlycemieTemplateComponent implements OnInit{
+export class GlycemieTemplateComponent implements OnInit {
   glycemies: Glycemie[] = [];
   chart: Chart | undefined;
 
 
-  constructor(private diabetiqueService :DiabetiqueService) {
+  constructor(private diabetiqueService: DiabetiqueService) {
     Chart.register(...registerables);
-}
+  }
 
   ngOnInit(): void {
     this.getGlycemie()
   }
 
 
-
-  getGlycemie(){
+  getGlycemie() {
     this.diabetiqueService.getAllGlycemie().subscribe(value => {
-      this.glycemies=value
+      this.glycemies = value
       this.chartJs()
-  })}
+    })
+  }
 
-  deleteGlycemie(id:number){
-    this.diabetiqueService.deleteGlycemie(id).subscribe(()=>{
-      this.getGlycemie();
+  deleteGlycemie(id: number) {
+    this.diabetiqueService.deleteGlycemie(id).subscribe(() => {
+        this.getGlycemie();
       }
     )
 
-    }
-  chartJs(){
+  }
+
+  chartJs() {
     const dateElements = this.glycemies.map(g => g.date);
     const valueElements = this.glycemies.map(g => g.valeurAfter);
     const ctx = (document.getElementById('chart-1') as HTMLCanvasElement).getContext('2d');
